@@ -38,7 +38,7 @@ features:
       label: "Get Started Now"
       link: "https://github.com/zeon-studio/hugoplate"
 
-  - title: "Based on decentralized public good"
+  - title: "Based on the decentralized public good"
     content: "TrueBlocks Key uses the index of appearances created by TrueBlocks Core, which publishes the index as a public good through the Unchained Index smart contract. Unlike Key, Core is fully local and open source. Both are designed to work with any EVM-based blockchain. TrueBlocks Key provides a simple, easy-to-use (for pay) Web 2.0 interface to this index. "
     button:
       enable: true
