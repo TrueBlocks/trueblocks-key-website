@@ -23,7 +23,8 @@ jobs:
           # echo "------------------------ DEBUG pwd ---------------------"
           # pwd
           # echo "------------------------ DEBUG pull origin testin ---------------------"
-          git pull origin main
+	  git checkout main
+          git pull
           # echo "------------------------ DEBUG npm install ---------------------"
           npm install postcss-cli
           # echo "------------------------ DEBUG npm run build ---------------------"
