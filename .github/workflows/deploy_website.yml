@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - testing
 
 jobs:
   build-and-deploy:
@@ -24,7 +23,7 @@ jobs:
           # echo "------------------------ DEBUG pwd ---------------------"
           # pwd
           # echo "------------------------ DEBUG pull origin testin ---------------------"
-          git pull origin testing
+          git pull origin main
           # echo "------------------------ DEBUG npm install ---------------------"
           npm install postcss-cli
           # echo "------------------------ DEBUG npm run build ---------------------"
