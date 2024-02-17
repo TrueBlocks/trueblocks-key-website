@@ -7,9 +7,10 @@ draft: false
 ---
 
 Appearance Index API lets you fetch appearances (**block number**, **transaction ID**) of any Ethereum address. You can also get a total number of appearances. The API is compatible with Ethereum standard JSON-RPC and adds 3 new methods:
-1. `tb_getAppearances`
+
+<!-- 1. `tb_getAppearances`
 1. `tb_getAppearanceCount`
-1. `tb_lastIndexedBlock`
+1. `tb_lastIndexedBlock` -->
 
 {{< toc >}}
 
@@ -18,7 +19,6 @@ Appearance Index API lets you fetch appearances (**block number**, **transaction
 Returns appearances of the given address.
 
 ### Parameters
-
 
 ```javascript
 "params": [{
@@ -59,7 +59,6 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"tb_getAppearances","params":[{se
 }
 ```
 
-
 ## `tb_getAppearanceCount` method
 
 Returns number of appearances of the given address.
@@ -92,7 +91,6 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"tb_getAppearanceCount","params":
   "result": 5302
 }
 ```
-
 
 ## `tb_lastIndexedBlock` method
 
