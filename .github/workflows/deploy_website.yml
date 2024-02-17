@@ -1,0 +1,40 @@
+name: Deploy Hugo Site
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Deploy to Server
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.NEW_SERVER_HOST }}
+        username: ${{ secrets.DOCS_USER }}
+        key: ${{ secrets.DOCS_PRIVATE_KEY }}
+        script: |
+          # echo "------------------------ DEBUG cd into folder ---------------------"
+          cd /home/${{ secrets.DOCS_USER }}/trueblocks-key-website
+          # echo "------------------------ DEBUG pwd ---------------------"
+          # pwd
+          # echo "------------------------ DEBUG pull origin testin ---------------------"
+          git checkout main
+          git pull
+          # echo "------------------------ DEBUG npm install ---------------------"
+          npm install postcss-cli
+          # echo "------------------------ DEBUG npm run build ---------------------"
+          npm run build
+          # echo "------------------------ DEBUG chmod ---------------------"
+          chown -R ${{ secrets.DOCS_USER }}:trueblocks public
+          # echo "------------------------ DEBUG grep ---------------------"
+          # find public -exec grep -His everything {} ';'
+          # echo "------------------------ DEBUG chmod not sure why ---------------------"
+          chmod 644 /var/www/key.trueblocks.io/html/service-worker.js
+          # echo "------------------------ DEBUG copy ---------------------"
+          cp -pR public/* /var/www/key.trueblocks.io/html/
+          # echo "------------------------ DEBUG done ---------------------"
