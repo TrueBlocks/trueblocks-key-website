@@ -11,6 +11,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    # This assumes that both hugo and lininator are already installed on the target machine
+
     - name: Deploy to Server
       uses: appleboy/ssh-action@master
       with:
@@ -18,23 +20,26 @@ jobs:
         username: ${{ secrets.DOCS_USER }}
         key: ${{ secrets.DOCS_PRIVATE_KEY }}
         script: |
-          # echo "------------------------ DEBUG cd into folder ---------------------"
-          cd /home/${{ secrets.DOCS_USER }}/trueblocks-key-website
-          # echo "------------------------ DEBUG pwd ---------------------"
-          # pwd
-          # echo "------------------------ DEBUG pull origin testin ---------------------"
+          cd /home/${{ secrets.DOCS_USER }}/key.trueblocks.io
           git checkout main
           git pull
-          # echo "------------------------ DEBUG npm install ---------------------"
           npm install postcss-cli
-          # echo "------------------------ DEBUG npm run build ---------------------"
           npm run build
-          # echo "------------------------ DEBUG chmod ---------------------"
-          chown -R ${{ secrets.DOCS_USER }}:trueblocks public
-          # echo "------------------------ DEBUG grep ---------------------"
-          # find public -exec grep -His everything {} ';'
-          # echo "------------------------ DEBUG chmod not sure why ---------------------"
+          chown -R ${{ secrets.DOCS_USER }}:trueblocks .
           chmod 644 /var/www/key.trueblocks.io/html/service-worker.js
-          # echo "------------------------ DEBUG copy ---------------------"
           cp -pR public/* /var/www/key.trueblocks.io/html/
-          # echo "------------------------ DEBUG done ---------------------"
+          echo "Running lininator..."
+          linkinator -r public/index.html
+
+    - name: Check for failure and report to Discord
+      uses: rjstone/discord-webhook-notify@v1
+      if: failure()
+      with:
+        severity: error
+        details: Test Failed!
+        webhookUrl: ${{ secrets.DOC_WEBHOOK }}
+
+    - name: Report job status
+      run: |
+        echo "This job's status is ${{ job.status }}"
+
