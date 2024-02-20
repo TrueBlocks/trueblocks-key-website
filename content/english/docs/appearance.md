@@ -31,7 +31,7 @@ Returns appearances of the given address.
 
 ### Returns
 
-An array of appearances (from the earliest to the latest)
+An array of appearances (from the earliest block to the latest). If nothing is found, an empty array.
 
 ### Example
 
@@ -97,7 +97,8 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"tb_getAppearanceCount","params":
   "result": {
     "data": 5302,
     "meta": {
-      "lastIndexedBlock": 19268245
+      "lastIndexedBlock": 19268245,
+      "address": "0x52bc44d5378309ee2abf1539bf71de1b7d7be3b5"
     }
   }
 }
@@ -113,7 +114,7 @@ None
 
 ### Returns
 
-Status object with last indexed block number (decimal)
+Returns only `meta` object (with last indexed block number as a decimal)
 
 ### Example
 
@@ -125,7 +126,8 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"tb_lastIndexedBlock","params":[]
   "id": 1,
   "jsonrpc": "2.0",
   "result": {
-    "data": {
+    "data": null,
+    "meta": {
       "lastIndexedBlock": 19268245
     }
   }
