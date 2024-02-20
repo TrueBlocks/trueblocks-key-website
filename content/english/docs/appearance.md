@@ -120,7 +120,7 @@ Returns only `meta` object (with last indexed block number as a decimal)
 
 ```bash
 # Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"tb_lastIndexedBlock","params":[],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"tb_status","params":[],"id":1}'
 # Result
 {
   "id": 1,
