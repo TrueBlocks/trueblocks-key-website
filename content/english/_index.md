@@ -26,7 +26,7 @@ features:
       label: "Read docs"
       link: "/docs/appearance/"
 
-  - title: "On our roadmap"
+  - title: "On the roadmap"
     content: ""
     bulletpoints:
       - "**Appearance Index API:** we're adding additional endpoints here including date and time queries and deeper analysis of an address's history (age, first appearance, etc.)"
@@ -41,8 +41,8 @@ features:
       label: "Get Started Now"
       link: "https://github.com/zeon-studio/hugoplate"
 
-  - title: "Based on the Unchained Index -- our popular decentralized public good"
-    content: "TrueBlocks Key uses the index of appearances created by TrueBlocks Core, which publishes the index as a public good through the Unchained Index smart contract. Unlike Key, Core is fully local and open source. Both systems are designed to work with any EVM-based blockchain. TrueBlocks Key provides a simple, easy-to-use, cloud-based Web 2.0 interface to this index. "
+  - title: "Based on the Unchained Index -- a true public good"
+    content: "TrueBlocks Key uses the index of appearances created by TrueBlocks Core, which publishes the index as a public good through the Unchained Index smart contract. Unlike Key, Core is fully local, fully decentralized, and open sourced. Both systems are designed to work with any EVM-based blockchain. TrueBlocks Key provides a simple, easy-to-use, cloud-based Web 2.0 interface to this index. "
     button:
       enable: true
       label: "Learn more about TrueBlocks"
