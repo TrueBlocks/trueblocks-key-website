@@ -6,11 +6,7 @@ categories: ["Docs", "API", "Appearances"]
 draft: false
 ---
 
-Appearance Index API lets you fetch appearances (**block number**, **transaction ID**) of any Ethereum address. You can also get a total number of appearances. The API is compatible with Ethereum standard JSON-RPC and adds 3 new methods:
-
-<!-- 1. `tb_getAppearances`
-1. `tb_getAppearanceCount`
-1. `tb_lastIndexedBlock` -->
+Appearance Index API lets you fetch appearances (**block number**, **transaction ID**) of any Ethereum address. You can also get a total number of appearances. The API is compatible with Ethereum standard JSON-RPC.
 
 {{< toc >}}
 
@@ -46,16 +42,26 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"tb_getAppearances","params":[{se
 {
   "id": 1,
   "jsonrpc": "2.0",
-  "result": [
-    {
-      "blockNumber": 4053179,
-      "transactionId": 2
-    },
-    {
-      "blockNumber": 4053179,
-      "transactionId": 1
+  "result": {
+    "data": [
+      {
+        "blockNumber": 4053179,
+        "transactionId": 1
+      },
+      {
+        "blockNumber": 4053179,
+        "transactionId": 2
+      },
+      {
+        "blockNumber": 4053180,
+        "transactionId": 8
+      }
+    ],
+    "meta": {
+      "lastIndexedBlock": 19268245,
+      "address": "0x52bc44d5378309ee2abf1539bf71de1b7d7be3b5"
     }
-  ]
+  }
 }
 ```
 
@@ -88,13 +94,18 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"tb_getAppearanceCount","params":
 {
   "id": 1,
   "jsonrpc": "2.0",
-  "result": 5302
+  "result": {
+    "data": 5302,
+    "meta": {
+      "lastIndexedBlock": 19268245
+    }
+  }
 }
 ```
 
-## `tb_lastIndexedBlock` method
+## `tb_status` method
 
-Returns last indexed block number.
+Returns index status, i.e. last indexed block number.
 
 ### Parameters
 
@@ -102,7 +113,7 @@ None
 
 ### Returns
 
-Block number (decimal)
+Status object with last indexed block number (decimal)
 
 ### Example
 
@@ -113,6 +124,10 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"tb_lastIndexedBlock","params":[]
 {
   "id": 1,
   "jsonrpc": "2.0",
-  "result": 19226855
+  "result": {
+    "data": {
+      "lastIndexedBlock": 19268245
+    }
+  }
 }
 ```
