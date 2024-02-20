@@ -29,7 +29,8 @@ jobs:
           chmod 644 /var/www/key.trueblocks.io/html/service-worker.js
           cp -pR public/* /var/www/key.trueblocks.io/html/
           echo "Running lininator..."
-          linkinator -r public/index.html
+          cd /var/www/key.trueblocks.io/html/
+          linkinator -r index.html
 
     - name: Check for failure and report to Discord
       uses: rjstone/discord-webhook-notify@v1
