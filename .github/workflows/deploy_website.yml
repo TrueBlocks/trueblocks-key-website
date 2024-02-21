@@ -1,4 +1,4 @@
-name: Deploy Hugo Site
+name: deploy
 
 on:
   push:
@@ -24,7 +24,6 @@ jobs:
         key: ${{ secrets.DOCS_PRIVATE_KEY }}
         script: |
           export PATH=$PATH:/usr/local/go/bin
-          env | grep -w PATH
           cd /home/${{ secrets.DOCS_USER }}/key.trueblocks.io
           git pull
           npm install postcss-cli
@@ -32,7 +31,6 @@ jobs:
           chown -R ${{ secrets.DOCS_USER }}:${{ secrets.DOCS_USER }} .
           chmod 644 /var/www/key.trueblocks.io/html/service-worker.js
           cp -pR public/* /var/www/key.trueblocks.io/html/
-          echo "Running lininator..."
           cd /var/www/key.trueblocks.io/html/
           linkinator -r index.html
 
