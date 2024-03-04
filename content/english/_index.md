@@ -6,7 +6,7 @@ banner:
   button:
     enable: true
     label: "Try on QuickNode Marketplace"
-    link: ""
+    link: "https://marketplace.quicknode.com/add-on/trueblocks-key"
 
 # Features
 features:
