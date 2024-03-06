@@ -30,7 +30,7 @@ Returns appearances of the given address.
 
 ### Returns
 
-An array of appearances (from the earliest block to the latest). If nothing is found, an empty array.
+An array of appearances (from the latest block to the earliest). If nothing is found, an empty array.
 
 ### Example
 
