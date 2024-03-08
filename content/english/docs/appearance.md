@@ -25,7 +25,7 @@ Returns appearances of the given address.
 
 1. `Object`
     - `address`: Address - address for which to return the appearances
-    - `perPage`: Uint - (optional) number of items per page
+    - `perPage`: Uint - (optional) number of items per page. `100` by default. The smallest valid value is `5`, the largest `1000`.
     - `pageId`: PageId - (optional) page to return. See [Pagination](#pagination).
 
 ### Returns
