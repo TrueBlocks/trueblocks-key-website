@@ -17,6 +17,11 @@ name = "Appearance Index"
 url = "docs/appearance"
 
 [[main]]
+name = "Pricing"
+url = "pricing"
+weight = 2
+
+[[main]]
 name = "About"
 url = "about/"
 weight = 3

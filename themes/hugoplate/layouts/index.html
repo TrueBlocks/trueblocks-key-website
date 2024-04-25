@@ -1,100 +1,224 @@
 {{ define "main" }}
   <!-- Banner -->
-  {{ with .Params.banner }}
     <section class="section pt-14">
       <div class="container">
         <div class="row justify-center">
-          <div class="lg:col-7 md:col-9 mb-8 text-center">
-            <h1 class="mb-4 text-h3 lg:text-h1">
-              {{ .title | markdownify }}
-            </h1>
-            <p class="mb-8">
-              {{ .content | markdownify }}
-            </p>
-            {{ with .button }}
-              {{ if .enable }}
-                <a
-                  class="btn btn-primary"
-                  href="{{ .link | absURL }}"
-                  {{ if strings.HasPrefix .link `http` }}
-                    target="_blank" rel="noopener"
-                  {{ end }}>
-                  {{ .label }}
-                  <i class="fa fa-arrow-right pl-2"></i>
-                </a>
-                <p class="text-sm content qn-link">
-                Don't have QuickNode account? <a href="https://www.quicknode.com/?via=trueblocks">Create one</a>
+          <div>
+            <div class="row items-center mb-16">
+              <header class="lg:col-6">
+                <h1 class="mb-4 text-h3 lg:text-h1">
+                  Ethereum indexer proven to find more address appearances
+                </h1>
+
+                <p>
+                  Build on complete data to deliver better apps and services
                 </p>
-              {{ end }}
-            {{ end }}
-          </div>
-          <div class="col-12">
-            <div class="row justify-center">
-              Be first to know about new features
+              </header>
 
-              <!-- newsletter starts -->
-
-              <div id="mlb2-10007238" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-10007238">
-                <div class="ml-form-align-center ">
-                  <div class="ml-form-embedWrapper embedForm">
-                    <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
-                      <form class="ml-block-form"
-                        action="https://assets.mailerlite.com/jsonp/529446/forms/106918506183788482/subscribe" data-code=""
-                        method="post" target="_blank">
-                        <div class="ml-form-formContent">
-                          <div class="ml-form-fieldRow ml-last-item">
-                            <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                              <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask=""
-                                name="fields[email]" placeholder="Email" autocomplete="email">
-                            </div>
-                          </div>
-                        </div>
-                        <input type="hidden" name="ml-submit" value="1">
-                        <div class="ml-form-embedSubmit">
-                          <button type="submit" class="primary">Join Newsletter</button>
-                          <button disabled="disabled" style="display: none;" type="button" class="loading">
-                            <div class="ml-form-embedSubmitLoad"></div>
-                            <span class="sr-only">Loading...</span>
-                          </button>
-                        </div>
-                        <input type="hidden" name="anticsrf" value="true">
-                      </form>
-
-                    </div>
-
-                    <div class="ml-form-successBody row-success" style="display: none">
-                      <div class="ml-form-successContent">
-                        <h4>Thank you!</h4>
-                        <p>You have successfully joined our closed beta. We'll get back to you.</p>
-                      </div>
-                    </div>
+              <section class="usecases lg:col-6">
+                <div class="usecase">
+                  <i class="icon fa-solid fa-circle-check"></i>
+                  <div>
+                    <strong>
+                      Find this one missing balance change
+                    </strong>
+                    Precisely reconcile balances and create comprehensive tax reports
                   </div>
                 </div>
-              </div>
-              <script>
-                function ml_webform_success_10007238() {
-                  var $ = ml_jQuery || jQuery;
-                  $('.ml-subscribe-form-10007238 .row-success').show();
-                  $('.ml-subscribe-form-10007238 .row-form').hide();
-                }
-              </script>
-              <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v1f25ee4b05f240a833e02c19975434a4"
-                type="text/javascript">
-                </script>
-              <script>
-                fetch("https://assets.mailerlite.com/jsonp/529446/forms/106918506183788482/takel")
-              </script>
 
-              <!-- newsletter ends -->
+                <div class="usecase">
+                  <i class="icon fa-solid fa-circle-check"></i>
+                  <div>
+                    <strong>
+                      Discover all interactions
+                    </strong>
+                    Build apps tracking wallets, comprehensive stats, transaction history lists
+                  </div>
+                </div>
 
+                <div class="usecase">
+                  <i class="icon fa-solid fa-circle-check"></i>
+                  <div>
+                    <strong>
+                      Unlock detailed insights
+                    </strong>
+                      Base your data science research on a solid foundation
+                  </div>
+                </div>
+              </section>
             </div>
-            <!-- {{ partial "image" (dict "Src" .image "Alt" "Banner image" "Loading" "eager" "Class" "mx-auto lg:!max-w-[800px]" "DisplayXL" "800x" ) }} -->
+
           </div>
+
         </div>
       </div>
     </section>
-  {{ end }}
   <!-- /Banner -->
+
+  <!-- Singup -->
+  <section id="cta" class="section justify-center text-center">
+    <div class="wrapper">
+      <p class="lead mb-4">
+        Seamlessly integrate Key with your current workflow or QuickNode account
+      </p>
+
+      <a class="btn btn-primary mb-4" href="/sign-up">
+        Sign up
+      </a>
+      <div>
+        <a class="btn btn-outline-primary" href="https://marketplace.quicknode.com/add-on/trueblocks-key" target="_blank">
+          Add to QuickNode
+        </a>
+        <p class="text-sm content qn-link">
+          Don't have QuickNode account? <a href="https://www.quicknode.com/?via=trueblocks">Create one</a>
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- /Signup -->
+
+  <!-- Appearances -->
+  <section class="section-sm bg-gradient section-appearances">
+    <div class="container">
+      <div class="row items-center justify-between">
+        <div class="mb:md-0   hidden  mb-6">
+
+        </div>
+        <div class="md:col-12 lg:col-12 ">
+          <h2 class="mb-4">
+            Appearance Index API
+          </h2>
+
+          <div class="mb-8 text-lg">
+            <p class="mb-4">
+              Finding all appearances of an address is known to be hard on Ethereum. For example,
+              balances can change without transfer
+              and not all event parameters are indexed.
+            </p>
+            <p>
+              At TrueBlocks we do our best to pick every address appearance out there.
+              Key provides a single, simple API that does one thing well: it returns complete list of appearances so you know
+              which transactions to fetch. It has been proven by companies and data scientists to return significantly more than other indexers.
+            </p>
+          </div>
+
+          <h3>Included</h3>
+          <ul>
+
+            <li class=" mb-4 pl-6">
+              <i class="fa fa-check"></i>
+              regular transactions
+            </li>
+
+            <li class=" mb-4 pl-6">
+              <i class="fa fa-check"></i>
+              internal transactions
+            </li>
+
+            <li class=" mb-4 pl-6">
+              <i class="fa fa-check"></i>
+              logs
+            </li>
+
+            <li class=" mb-4 pl-6">
+              <i class="fa fa-check"></i>
+              token transfers
+            </li>
+
+            <li class=" mb-4 pl-6">
+              <i class="fa fa-check"></i>
+              withdrawals
+            </li>
+
+            <li class=" mb-4 pl-6">
+              <i class="fa fa-check"></i>
+              mining and uncle rewards
+            </li>
+
+            <li class=" mb-4 pl-6">
+              <i class="fa fa-check"></i>
+              and more…
+            </li>
+
+          </ul>
+
+          <a class="btn btn-primary mt-6" href="//localhost:1313/docs/appearance/">
+            Read docs
+            <i class="fa fa-arrow-right pl-2"></i>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm bg-gradient section-newsletter">
+    <div class="container text-center">
+
+      <h2 class="mb-4">
+        Be first to know about new features
+      </h2>
+
+      <div>
+        <!-- newsletter starts -->
+
+        <div id="mlb2-10007238" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-10007238">
+          <div class="ml-form-align-center ">
+            <div class="ml-form-embedWrapper embedForm">
+              <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                <form class="ml-block-form"
+                  action="https://assets.mailerlite.com/jsonp/529446/forms/106918506183788482/subscribe" data-code=""
+                  method="post" target="_blank">
+                  <div class="ml-form-formContent">
+                    <div class="ml-form-fieldRow ml-last-item">
+                      <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                        <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask=""
+                          name="fields[email]" placeholder="Email" autocomplete="email">
+                      </div>
+                    </div>
+                  </div>
+                  <input type="hidden" name="ml-submit" value="1">
+                  <div class="ml-form-embedSubmit">
+                    <button type="submit" class="primary">Join Newsletter</button>
+                    <button disabled="disabled" style="display: none;" type="button" class="loading">
+                      <div class="ml-form-embedSubmitLoad"></div>
+                      <span class="sr-only">Loading...</span>
+                    </button>
+                  </div>
+                  <input type="hidden" name="anticsrf" value="true">
+                </form>
+
+              </div>
+
+              <div class="ml-form-successBody row-success" style="display: none">
+                <div class="ml-form-successContent">
+                  <h4>Thank you!</h4>
+                  <p>You have successfully joined our closed beta. We'll get back to you.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+          function ml_webform_success_10007238() {
+            var $ = ml_jQuery || jQuery;
+            $('.ml-subscribe-form-10007238 .row-success').show();
+            $('.ml-subscribe-form-10007238 .row-form').hide();
+          }
+        </script>
+        <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v1f25ee4b05f240a833e02c19975434a4"
+          type="text/javascript">
+          </script>
+        <script>
+          fetch("https://assets.mailerlite.com/jsonp/529446/forms/106918506183788482/takel")
+        </script>
+
+        <!-- newsletter ends -->
+
+      </div>
+
+    </div>
+  </section>
 
   <!-- Features -->
   {{ range $i, $e:= .Params.features }}
