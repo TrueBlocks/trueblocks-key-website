@@ -1,31 +1,14 @@
 ---
 # Banner
 banner:
-  title: "Everything that ever happened anywhere on the chain"
-  content: "Get a complete historical list of appearances (block number, transaction id) for any Ethereum address"
+  title: "Find significantly more appearances of any address with a single API call"
   button:
     enable: true
-    label: "Try on QuickNode Marketplace"
+    label: "Try in QuickNode Marketplace"
     link: "https://marketplace.quicknode.com/add-on/trueblocks-key"
 
 # Features
 features:
-  - title: "Appearance Index API"
-    content: "A single API endpoint returns significantly more appearances (block number, transaction ID) than other indexers. Includes:"
-    bulletpoints:
-      - "regular transactions"
-      - "internal transactions"
-      - "logs"
-      - "token transfers"
-      - "withdrawals"
-      - "mining and uncle rewards"
-      - "and more..."
-    footer: "The API can also return number of appearances (i.e., count) for any Ethereum address."
-    button:
-      enable: true
-      label: "Read docs"
-      link: "/docs/appearance/"
-
   - title: "On the roadmap"
     content: ""
     bulletpoints:

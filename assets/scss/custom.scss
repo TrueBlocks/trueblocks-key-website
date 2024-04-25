@@ -8,3 +8,135 @@ html.dark {
         color: #b4afb6;
     }
 }
+
+header p {
+    font-size: 1.2rem;
+}
+
+.usecases {
+    gap: 1rem;
+    text-align: left;
+
+    .usecase {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+        padding: .4rem .4rem .4rem 1rem;
+        box-shadow: 0 .2rem .4rem rgba(0,0,0,.4);
+        border-radius: 4px;
+
+        &:not(:last-child) {
+            margin-bottom: .8rem;
+        }
+
+        .icon {
+            color: #651e81;
+            font-size: 2rem;
+
+            .dark & {
+                color: #9be37a;
+            }
+        }
+
+        strong {
+            display: block;
+        }
+    }
+}
+
+#cta {
+    padding-top: 0;
+    box-shadow: inset 0 0 .8rem rgba(0, 0, 0, .4);
+    background: radial-gradient(white, #651e83 150%);
+    text-shadow: 0 0 2px white;
+
+    .wrapper {
+        padding-top: 6rem;
+    }
+
+    .lead {
+        @apply font-secondary font-bold leading-tight;
+        font-size: 1.2rem;
+    }
+
+    a.btn {
+        width: 20rem;
+        text-shadow: none;
+
+        &:not(.btn-primary) {
+            background-color: white;
+
+            &:hover {
+                color: unset;
+            }
+        }
+    }
+
+    .dark & {
+        background: radial-gradient(white, #9be37a 150%);
+        color: black;
+
+        a.btn {
+            background-color: #651e83;
+            color: white;
+            border: none;
+
+            &:not(.btn-primary) {
+                background-color: black;
+            }
+        }
+
+        .qn-link {
+            &, a {
+                color: black;
+            }
+        }
+    }
+}
+
+.section-appearances {
+    ul {
+        display: flex;
+        gap: .6rem;
+
+        li {
+            padding: 0;
+        }
+    }
+}
+
+.section-newsletter h2 {
+    font-size: 1.4rem;
+}
+
+#pricing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    .plan {
+        border-radius: 4px;
+        padding: .8rem;
+        box-shadow: 0 .2rem .4rem rgba(0, 0, 0, .4);
+        flex: 1;
+        border: .2rem solid #651e81;
+
+        .name {
+            @apply font-secondary font-bold leading-tight;
+        }
+    }
+
+    .dark & {
+        .name, .price {
+            color: white;
+        }
+    }
+}
+
+.pricing-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
