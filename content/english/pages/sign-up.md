@@ -5,7 +5,7 @@ draft: false
 
 Thank you for being interested in signing up for TrueBlocks Key.
 
-Currently, Key is available as an add-on in the <a href="https://marketplace.quicknode.com/add-on/trueblocks-key">QuickNode Marketplace</a>.
+Currently, Key is available as an add-on in the <a href="https://marketplace.quicknode.com/add-on/address-appearances-api">QuickNode Marketplace</a>.
 However, we also support businesses integrating their workflows with Key directly.
 
 Please fill out the form below if you are interested in integrating with Key directly.
