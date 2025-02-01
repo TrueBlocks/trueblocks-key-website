@@ -1,58 +1,82 @@
 <!doctype html>
-<html
-  itemscope
-  class="{{- if not site.Params.theme_switcher -}}
+<html itemscope class="{{- if not site.Params.theme_switcher -}}
     {{- site.Params.theme_default -}}
-  {{- end -}}"
-  lang="{{ site.LanguageCode | default `en-US` }}"
-  itemtype="http://schema.org/WebPage">
-  <head>
-    <!-- head (don't cache it) -->
-    {{ partial "essentials/head.html" . }}
+  {{- end -}}" lang="{{ site.LanguageCode | default `en-US` }}" itemtype="http://schema.org/WebPage">
+
+<head>
+  <!-- head (don't cache it) -->
+  {{ partial "essentials/head.html" . }}
 
 
-    <!-- style (always cache it) -->
-    {{ partialCached "essentials/style.html" . }}
-  </head>
+  <!-- style (always cache it) -->
+  {{ partialCached "essentials/style.html" . }}
 
-  <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZCZL75W" height="0" width="0"
-        style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+  <style>
+    .banner {
+      background-color: #4B0082;
+      color: orange;
+      text-align: center;
+      font-weight: bold;
+      padding: 10px 0;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      font-size: 2rem;
+    }
 
-    <!-- cache partial only in production -->
-    {{ if hugo.IsProduction }}
-      {{ partialCached "preloader.html" . }}
-      {{ partialCached "gtm-noscript.html" . }}
-    {{ else }}
-      {{ partial "preloader.html" . }}
+    body {
+      margin-top: 200px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZCZL75W" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div class="banner">
+    <p>As of Jan 2025, Key has</p>
+    <p>been discontinued. This website</p>
+    <p>is retained for reference.</p>
+  </div>
+  <!-- cache partial only in production -->
+  {{ if hugo.IsProduction }}
+  {{ partialCached "preloader.html" . }}
+  {{ partialCached "gtm-noscript.html" . }}
+  {{ else }}
+  {{ partial "preloader.html" . }}
 
 
-      <!-- tailwind size indicator -->
-      {{ partial "components/tw-size-indicator.html" . }}
-    {{ end }}
+  <!-- tailwind size indicator -->
+  {{ partial "components/tw-size-indicator.html" . }}
+  {{ end }}
 
 
-    <!-- header (don't cache it) -->
-    {{ partial "essentials/header.html" . }}
-    {{ partial "search-modal.html" (dict "Context" . ) }}
+  <!-- header (don't cache it) -->
+  {{ partial "essentials/header.html" . }}
+  {{ partial "search-modal.html" (dict "Context" . ) }}
 
 
-    <main>
-      {{ block "main" . }}{{ end }}
-    </main>
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
 
-    <!-- cache partial only in production -->
-    {{ if hugo.IsProduction }}
-      {{ partialCached "essentials/footer.html" . }}
-      {{ partialCached "essentials/script.html" . }}
-    {{ else }}
-      {{ partial "essentials/footer.html" . }}
-      {{ partial "essentials/script.html" . }}
-    {{ end }}
+  <!-- cache partial only in production -->
+  {{ if hugo.IsProduction }}
+  {{ partialCached "essentials/footer.html" . }}
+  {{ partialCached "essentials/script.html" . }}
+  {{ else }}
+  {{ partial "essentials/footer.html" . }}
+  {{ partial "essentials/script.html" . }}
+  {{ end }}
 
-    {{ partial "body_end_scripts.html" . }}
-    {{ partial "body_end_styles.html" . }}
-  </body>
+  {{ partial "body_end_scripts.html" . }}
+  {{ partial "body_end_styles.html" . }}
+</body>
+
 </html>
